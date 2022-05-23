@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Navigation from './Pages/Shared/Header/Navigation';
 import MainFooter from './Pages/Shared/Footer/MainFooter';
+import Home from './Pages/Home/Home';
 function App() {
   return (
  <>
@@ -17,7 +18,7 @@ function App() {
  <Routes>
    <Route path='/register' element={<Register></Register>}></Route>
    <Route path='/login' element={<Login></Login>}></Route>
-   <Route path='/home' element={<Register></Register>}></Route>
+   <Route path='/' element={<Home></Home>}></Route>
    <Route path='/blog' element={<Register></Register>}></Route>
    <Route path='*' element={<NotFound></NotFound>}></Route>
  </Routes>

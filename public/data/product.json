@@ -1,0 +1,123 @@
+[
+    {
+        "_id": 1,
+        "itemName":"Campagnolo Shamal Carbon Disc Wheelset",
+        "price":"150",
+        "quantity": "100",
+        "minimumOrderQty":10,
+        "image": "images/parts-1.jpg",
+        "images" :["abc.jpg"],
+        "title":"Fast and comfortable: Campagnolo‘s Shamal Carbon Disc wheels",
+        "description":"The Shamal Carbon Disc from Campagnolo is the perfect all-rounder: a wheelset that is both fast and comfortable. Ideal for endurance road bikes and gravel bikes. They are the matching wheels for the Ekar gravel groupset. Of course available with the new Campa standard N3W, so that nothing stands in the way of the 13-speed gravel action."
+    },
+    {
+        "_id": 2,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-2.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 3,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-3.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 4,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-4.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 5,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-5.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 6,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-6.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 7,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-7.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 8,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-8.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 9,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-9.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    },
+
+    {
+        "_id": 10,
+        "itemName":"Shimano ULTEGRA PD-R8000 SPD-SL Pedals",
+        "price":"80",
+        "quantity": "200",
+        "minimumOrderQty":10,
+        "image": "images/parts-10.jpg",
+        "images" :["abc.jpg"],
+        "title":"To match the stiffness of the Hollowtech II crankset, there is no better option than the lightweight PD-R8000 pedals. ts carbon-composite body and extra-wide platform will give you the transfer of power you need.",
+        "description":"Originally developed for the requirements of the Pro-Tour area in terms of strength and endurance the SPD-SL technology is very popular for many users - from competition riders of all levels to sports, clubs and recreational riders. SPD-SL is a pedal/shoe system for road bikes that has been consistently developed by Shimano with the aim of optimum power transmission."
+    }
+
+
+
+]
