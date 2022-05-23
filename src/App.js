@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Navigation from './Pages/Shared/Header/Navigation';
+import MainFooter from './Pages/Shared/Footer/MainFooter';
 function App() {
   return (
  <>
@@ -20,6 +21,9 @@ function App() {
    <Route path='/blog' element={<Register></Register>}></Route>
    <Route path='*' element={<NotFound></NotFound>}></Route>
  </Routes>
+
+
+ <MainFooter></MainFooter>
   
  </>
   );

@@ -1,0 +1,8 @@
+https://demo.templatetrend.com/magento/MAG777/MAG750/
+
+
+primary colors: #1BA370
+secondary color: #3B3B3B
+second primary color: #F5F5F5
+
+
