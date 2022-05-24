@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import {FaFlag, FaDesktop,FaUsers, FaThumbsUp} from 'react-icons/fa';
+import { RiProfileLine } from "react-icons/ri";
 const Summary = () => {
     return (
        <Container>
@@ -16,7 +17,7 @@ const Summary = () => {
                </Col>
               
                <Col>
-                 <FaDesktop className='h2 text-primary'></FaDesktop>
+                 <RiProfileLine className='h2 text-primary'></RiProfileLine>
                  <h2 className='my-3'>300+</h2>
                  <p>Complete projects</p>
                </Col>
