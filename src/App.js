@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Register from './Pages/Register/Register';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login/Login';
-import NotFound from './components/NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound'
 import Navigation from './Pages/Shared/Header/Navigation';
 import MainFooter from './Pages/Shared/Footer/MainFooter';
 import Home from './Pages/Home/Home';
