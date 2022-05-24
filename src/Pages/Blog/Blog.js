@@ -34,7 +34,7 @@ const Blog = () => {
                           ))}
                         </ul>
                       </Col>
-                      <Col>
+                      {blog.Answer?.difference2.length === 0? null :  <Col>
                         <ul className="list-group list-group-flush">
                           {blog.Answer?.difference2.map((authori, index) => (
                             <li className="list-group-item" key={index}>
@@ -42,7 +42,8 @@ const Blog = () => {
                             </li>
                           ))}
                         </ul>
-                      </Col>
+                      </Col>}
+                     
                     </Row>
                   ) : (
                     ""
