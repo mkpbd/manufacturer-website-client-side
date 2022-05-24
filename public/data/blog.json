@@ -1,100 +1,117 @@
 [
-    {
-       "_id":1,
-       "questionName":"Difference between javascript and nodejs",
-       "Answer":
-            {
-              "def": "javascript is a smiple programming language taht runs in any broweser javasscript enginte. where node JS is an interpreter or running environment for a javascript programming language that hold many excesses, it requires libraries that can easily be accessed from javascript programming for better use. ",
-              "difference1":[
-                 "Javascript is a programming language that is used for writing scripts on the website.",
-                 "Javascript can only be run in the browsers.",
-                 "It is basically used on the client-side",
-                 "Javascript is capable enough to add HTML and play with the DOM",
-                 "Javascript is used in frontend development.",
-                 "Some of the javascript frameworks are RamdaJS, TypedJS, etc. "
-              ], 
-              "difference2":[
-                 "NodeJS is a Javascript runtime environment.",
-                 "We can run Javascript outside the browser with the help of NodeJS.",
-                 "We can run Javascript outside the browser with the help of NodeJS.",
-                 "It is mostly used on the server-side.",
-                 "Nodejs does not have capability to add HTML tags",
-                 "Nodejs is used in server-side development",
-                 "Some of the Nodejs modules are Lodash, express etc. These modules are to be imported from npm. "
-              ]
-            }
-       
-       
-    },
-    {
-       "_id":2,
-       "questionName":" When should you use nodejs and when should you use mongodb?",
-       "Answer":{
-          "def":"Node.js is an open-source JavaScript runtime environment that allows back-end developers to use JavaScript to create server-side applications and APIs. MongoDB is an open-source, non-relational database developed by MongoDB, Inc. MongoDB stores data as documents in a binary representation called BSON (Binary JSON). Related information is stored together for fast query access through the MongoDB query language.",
-          "difference1":[
-             "MongoDB: The NoSQL Non-Relational Database",
-             "Dynamic schema: As mentioned, this gives you flexibility to change your data schema without modifying any of your existing data.",
-             "Scalability: MongoDB is horizontally scalable, which helps reduce the workload and scale your business with ease.",
-             "Manageability: The database doesn’t require a database administrator. Since it is fairly user-friendly in this way, it can be used by both developers and administrators.",
-             "Speed: It’s high-performing for simple queries. • Flexibility: You can add new columns or fields on MongoDB without affecting existing rows or application performance."
-          ],
-          "difference2":[
-             "I/O calls do not block the main thread; ",
-             "Server keeps processing user requests simultaneously;",
-             "Simple and popular JavaScript language",
-             "Suits both front-end and back-end ",
-             "Rich ecosystem",
-             "Data streaming means breaking large files into smaller batches to provide smooth and impeccable streaming"
-          ]
-          
-       }
-       
-    },
-    {
-       "_id":3,
-       "questionName":" Differences between sql and nosql databases?",
-       "Answer":{
-         "def":"SQL databases defines and manipulates data based structured query language (SQL). SQL is one of the most versatile and widely-used options available which makes it a safe choice especially for great complex queries. A NoSQL database has dynamic schema for unstructured data. Data is stored in many ways which means it can be document-oriented, column-oriented, graph-based or organized as a KeyValue store",
+   {
+      "id":1,
+      "questionName": "How will you improve the performance of a React Application?",
+      "Answer":
+           {
+             "def": "Internally, React uses several clever techniques to minimize the number of costly DOM operations required to update the UI. For many applications, using React will lead to a fast user interface without doing much work to specifically optimize for performance. Nevertheless, there are several ways you can speed up your React application ",
+             "difference1":[
+                "Keeping component state local where necessary.",
+                "Memoizing React components to prevent unnecessary re-renders.",
+                "Code-splitting in React using dynamic import()",
+                "Windowing or list virtualization in React.",
+                "Lazy loading images in React.",
+                "Dependency optimization",
+                "Virtualize Long Lists",
+                "Consider Server-side Rendering"
+             ], 
+             "difference2":[ ]
+           }
+      
+      
+   },
+   {
+      "_id":2,
+      "questionName":" What are the different ways to manage a state in a React application",
+      "Answer":{
+         "def":"Managing state in your React apps isn’t as simple as using useState or useReducer Not only are there are a lot of different kinds of state, but there often dozens of ways of managing each kind. Which should we choose",
          "difference1":[
-               "RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)",
-               "These databases have fixed or static or predefined schema",
-               "These databases are not suited for hierarchical data storage.",
-               "These databases are best suited for complex queries",
-               "Vertically Scalable",
-               "Follows ACID property"
-
+            "Local state : Local (UI) state – Local state is data we manage in one or another component.Local state is most often managed in React using the useState hook.",
+            "Global state : Global (UI) state – Global state is data we manage across multiple components.Global state is necessary when we want to get and update data anywhere in our app, or in multiple components at least.",
+            "Server state : Server state – Data that comes from an external server that must be integrated with our UI state. Server state is a simple concept, but can be hard to manage alongside all of our local and global UI state.",
+            "URL state : URL state – Data that exists on our URLs, including the pathname and query parameters. URL state is often missing as a category of state, but it is an important one. In many cases, a lot of major parts of our application rely upon accessing URL state. ",
+            "Speed: It’s high-performing for simple queries. • Flexibility: You can add new columns or fields on MongoDB without affecting existing rows or application performance."
          ],
-         "difference2":[
-            "Non-relational or distributed database system.",
-            "They have dynamic schema",
-            "These databases are best suited for hierarchical data storage.",
-            "These databases are not so good for complex queries",
-            "Horizontally scalable",
-            "Follows CAP(consistency, availability, partition tolerance)"
-         ]
+         "difference2":[ ]
          
       }
-       
-    },
-    {
-       "id":4,
-       "questionName":"What is the purpose of jwt and how does it work?",
-       "Answer":{
-         "def":"JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.",
-         "difference1":[
-               "JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz.",
-               "1.The header ",
-               "2. The payload",
-               "3. The signature.",
-               "The header typically consists of two parts: the type of the token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA.",
-               "The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.",
-               "To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that."
+      
+   },
+   {
+      "_id":3,
+      "questionName":" How does prototypical inheritance work?",
+      "Answer":{
+        "def":"Every object with its methods and properties contains an internal and hidden property known as [[Prototype]]. The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using",
+        "difference1":["images/Diagram108.png"],
+        "difference2":[ ]
+        
+     }
+      
+   },
+   {
+      "_id":4,
+      "questionName":"Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts",
+      "Answer":{
+        "def":"One should never update the state directly because of the following reasons:",
+        "difference1":[
+              "If we update it directly, calling the setState() afterward may just replace the update we made.",
+              "When we directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value. ",
+              "we will lose control of the state across all components.",
+              "When the component is mounted for the first time. It has three lifecycle hooks that we commonly use  <strong> constructor</strong> <strong>render</strong> <strong>componentDidMount</strong>",
+              "Updating Phase:",
+              "When the component is already mounted and a change in state or props has happened. It has two lifecycle hooks that we commonly use:",
+              "<strong>render</strong> <strong>componentDidUpdate</strong>",
+              "Unmounting Phase: When a component is deleted. It has one lifecycle hook that we commonly use",
+              "componentWillUnmount"
 
-         ],
-         "difference2":[  ]
-         
-      }
-       
-    }
+        ],
+        "difference2":[  ]
+        
+     }
+      
+   },
+
+   {
+      "_id":5,
+      "questionName":" We have an array of products. Each product has a name, price, description, etc. How will we implement a search to find products by name?",
+      "Answer":{
+        "def":"JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.",
+        "difference1":[
+              "JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz.",
+              "1.The header ",
+              "2. The payload",
+              "3. The signature.",
+              "The header typically consists of two parts: the type of the token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA.",
+              "The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.",
+              "To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that."
+
+        ],
+        "difference2":[  ]
+        
+     }
+      
+   },
+    {
+      "_id":6,
+      "questionName": "What is a unit test? Why should write unit tests?",
+      "Answer":{
+        "def":"Unit testing is a testing method that tests an individual software unit in isolation. This involves verifying the output of a function or component for a given input.For React components, this could mean checking that the component renders correctly for the specified props.",
+        "difference1":[
+              "Unit tests test the smallest unit possible, mocking any dependencies the component may have.",
+              "Integration tests test how multiple components work together. These tests give a better understanding of how the user experiences the application.",
+              "There are multiple reasons why unit tests can be helpful. Some of them being:",
+              "Prevent regressions",
+              "Exercise your code",
+              "Faster feedback while developing"
+              
+
+        ],
+        "difference2":[  ]
+        
+     }
+      
+   }
+
+
 
 ]
