@@ -9,6 +9,7 @@ import NotFound from './components/NotFound/NotFound'
 import Navigation from './Pages/Shared/Header/Navigation';
 import MainFooter from './Pages/Shared/Footer/MainFooter';
 import Home from './Pages/Home/Home';
+import Blog from './Pages/Blog/Blog';
 function App() {
   return (
  <>
@@ -19,7 +20,8 @@ function App() {
    <Route path='/register' element={<Register></Register>}></Route>
    <Route path='/login' element={<Login></Login>}></Route>
    <Route path='/' element={<Home></Home>}></Route>
-   <Route path='/blog' element={<Register></Register>}></Route>
+   <Route path='/blog' element={<Blog></Blog>}></Route>
+   <Route path='/parts' element={<Register></Register>}></Route>
    <Route path='*' element={<NotFound></NotFound>}></Route>
  </Routes>
 
