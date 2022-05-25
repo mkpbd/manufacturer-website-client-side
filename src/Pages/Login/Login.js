@@ -26,11 +26,17 @@ const Login = () => {
   // const [token] = useToken(user || gUser);
 
   
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  // let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
-  // useEffect( () =>{
+  useEffect( () =>{
+     
+          navigate(from, { replace: true });
+  
+  }, [ from, navigate])
+
+    // useEffect( () =>{
   //     if (token) {
   //         navigate(from, { replace: true });
   //     }

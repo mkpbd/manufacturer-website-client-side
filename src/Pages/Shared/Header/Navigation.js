@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Navigation = () => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+      signOut(auth);
+      //localStorage.removeItem('accessToken');
+  };
     return (
         <Navbar collapseOnSelect variant='dark' expand="lg" style={{ "color":"#fff", "borderBottom":"5px solid #fff", "background": "#1BA370"}}>
         <Container>
@@ -21,7 +30,8 @@ const Navigation = () => {
           </Nav>
           <Nav>
             <Link to='/dashboard' className='nav-link'>Dashboard</Link>
-            <Link to='/login' className='nav-link'>Log In</Link>
+            
+           {user ?  <button type='submit' onClick={logout} className='nav-link'>Log Out</button>: <Link to='/login' className='nav-link'>Login</Link>}
             <Link to='/register' className='nav-link'>Register</Link>
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
