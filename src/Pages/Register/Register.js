@@ -2,18 +2,51 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useForm,Controller } from 'react-hook-form';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css'
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import useToken from '../../custom_hooks/useToken';
+import Loading from '../../components/Loading/Loading';
 
 const Register = () => {
 
 	const { register,formState: { errors }, handleSubmit ,control, watch} = useForm();
+	const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+	const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-	const onSubmitForm = (data) => {
-  
+	
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    // const [token]  = useToken(user || gUser);
+
+    const navigate = useNavigate();
+
+    let signInError;
+
+    if (loading || gLoading || updating) {
+        return <Loading></Loading>
+    }
+
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+    }
+
+    // if (token) {
+    //     navigate('/appointment');
+    // }
+	const onSubmitForm = async(data) => {
+		await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.username });
 	  console.log(data)
 	};
 
-	const password = watch('password');
+	// const password = watch('password');
 
     return (
         <div className="limiter">
@@ -98,15 +131,15 @@ const Register = () => {
 							Sign In
 						</button>
 					</div>
-
+					{signInError}
 					<div className="w-full text-center p-t-55 my-3">
 						<span className="txt2">
 							You have a account
 						</span>
 
-						<a href="#" className="txt2 bo1 ms-2">
+						<Link to="/login" className="txt2 bo1 ms-2">
 							Login up now
-						</a>
+						</Link>
 					</div>
 
                     </Row>
