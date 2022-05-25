@@ -14,7 +14,7 @@ const Dashboard = () => {
   return (
     <Container fluid>
       <Row>
-        <Col sm="4" className="sidebarMenuWitdh">
+        <Col sm="3" className="sidebarMenuWitdh">
           <span
             style={{ fontSize: "30px", cursor: "pointer" }}
             onClick={openNav}
