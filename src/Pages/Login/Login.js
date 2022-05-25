@@ -30,11 +30,16 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  useEffect( () =>{
-     
-          navigate(from, { replace: true });
+  if (loading || gLoading) {
+    return <Loading></Loading>;
+  }
+
+      if(user || gUser){
+        navigate(from, { replace: true });
+      }
+       
   
-  }, [ from, navigate])
+
 
     // useEffect( () =>{
   //     if (token) {
@@ -42,9 +47,7 @@ const Login = () => {
   //     }
   // }, [token, from, navigate])
 
-  if (loading || gLoading) {
-    return <Loading></Loading>;
-  }
+
   const onSubmitForm = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
@@ -69,15 +72,15 @@ const Login = () => {
             Sign In With
           </span>
           <Row className="d-flex px-5 ">
-            <a href="#" className="btn-face m-b-20 me-3">
+            <button  className="btn-face m-b-20 me-3 btn transparent">
               <FaGithub className="h2 me-2"></FaGithub>
               Github
-            </a>
+            </button>
 
-            <a href="#" onClick={()=>signInWithGoogle()} className="btn-google m-b-20 bg-primary text-light">
+            <button onClick={()=>signInWithGoogle()} className="btn-google m-b-20 bg-primary text-light btn transparent">
               <FaGoogle className="h2 me-2 text-warning"></FaGoogle>
               Google
-            </a>
+            </button>
           </Row>
           <form
             className="login100-form validate-form flex-sb flex-w p-5"
