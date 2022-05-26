@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-toastify/dist/ReactToastify.css';
 import Register from "./Pages/Register/Register";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
@@ -16,21 +17,30 @@ import Payment from "./Pages/Dashboard/Payment";
 import Parts from "./components/Parts/Parts";
 import AddTools from "./Pages/Dashboard/AddTools/AddTools";
 import { ToastContainer } from "react-toastify";
+import Purchase from "./Pages/Dashboard/Purchase/Purchase";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 function App() {
   return (
     <>
       <Navigation></Navigation>
-
+      <ToastContainer></ToastContainer>
       <Routes>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="/parts" element={<Register></Register>}></Route>
-        <Route path="dashboard" element={<Dashboard></Dashboard>}>
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        >
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="parts/:id" element={<Parts></Parts>}></Route>
-
+          <Route path="purchase/:id" element={<Purchase></Purchase>}></Route>
           <Route path="pro" element={<Myprofiles></Myprofiles>}></Route>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="add" element={<AddTools></AddTools>}></Route>
@@ -46,8 +56,9 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
 
+      <Purchase></Purchase>
       <MainFooter></MainFooter>
-      <ToastContainer></ToastContainer>
+     
     </>
   );
 }

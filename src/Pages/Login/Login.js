@@ -1,22 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Row } from "react-bootstrap";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useSendEmailVerification
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../../components/Loading/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../custom_hooks/useToken";
+import { toast } from "react-toastify";
+
+
 const Login = () => {
+
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    
+  const [sendPasswordResetEmail, sending, passwordError] = useSendPasswordResetEmail(auth);
 
   const {
-    register,
+    register,trigger,
     formState: { errors },
     handleSubmit,
   } = useForm();
@@ -61,6 +69,22 @@ const Login = () => {
     );
   }
 
+  const handleResetPassword =  async (event) => {
+    event.preventDefault();
+    const email =  await trigger("username");
+
+   // console.log(email ," dfadsfa")
+    if (email) {
+     const rr =  await sendPasswordResetEmail(email);
+
+     console.log('emails ', rr);
+     
+      toast.success("password reset send");
+    } else {
+      toast.error("place valid Email address");
+    }
+  };
+
   return (
     <div className="limiter">
       <div
@@ -102,7 +126,7 @@ const Login = () => {
                   required: true,
                   pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 })}
-                name="username"
+               
                 id="userName"
               />
               <span className="focus-input100"></span>
@@ -114,9 +138,9 @@ const Login = () => {
             <div className="p-t-13 p-b-9 my-3">
               <label htmlFor="password" className="txt1">
                 Password
-                <a href="#" className="txt2 bo1 m-l-5 my-2 ms-2">
+                <button onClick={handleResetPassword} className="txt2 bo1 m-l-5 my-2 ms-2 btn transparent">
                   Forgot?
-                </a>
+                </button>
               </label>
             </div>
             <div
@@ -140,6 +164,7 @@ const Login = () => {
             <div className="container-login100-form-btn m-t-17 my-2">
               <button className="login100-form-btn">Sign In</button>
             </div>
+            {signInError}
           </form>
           <div className="w-full text-center p-t-55 my-3">
             <span className="txt2">Not a member?</span>
