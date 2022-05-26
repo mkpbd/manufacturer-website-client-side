@@ -6,12 +6,14 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import {
   useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import useToken from "../../custom_hooks/useToken";
 import Loading from "../../components/Loading/Loading";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const {
@@ -24,7 +26,9 @@ const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-
+	const [sendEmailVerification, sendingEmail, sendEmailerror] = useSendEmailVerification(
+		auth
+	  );
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   // const [token]  = useToken(user || gUser);
@@ -39,7 +43,7 @@ const Register = () => {
 
   if (error || gError || updateError) {
     signInError = (
-      <p className="text-red-500">
+      <p className="text-danger">
         <small>
           {error?.message || gError?.message || updateError?.message}
         </small>
@@ -53,6 +57,14 @@ const Register = () => {
   const onSubmitForm = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.username });
+	await sendEmailVerification();
+
+	if(sendEmailerror){
+		toast.error(sendEmailerror.message)
+	}else{
+		toast.success("Email verification has been send");
+	}
+	
     console.log(data);
   };
 

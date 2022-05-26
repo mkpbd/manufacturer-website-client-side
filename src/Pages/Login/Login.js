@@ -75,11 +75,17 @@ const Login = () => {
 
    // console.log(email ," dfadsfa")
     if (email) {
-     const rr =  await sendPasswordResetEmail(email);
+      await sendPasswordResetEmail(email);
 
-     console.log('emails ', rr);
-     
+     console.log('emails ', passwordError);
+
+     if(sending){
       toast.success("password reset send");
+     }
+     if(passwordError){
+      toast.error(passwordError.message);
+  }
+     
     } else {
       toast.error("place valid Email address");
     }
