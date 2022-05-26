@@ -30,6 +30,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="/parts" element={<Register></Register>}></Route>
+        <Route path="purchase/:id" element={<Purchase></Purchase>}></Route>
         <Route
           path="dashboard"
           element={
@@ -40,7 +41,6 @@ function App() {
         >
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="parts/:id" element={<Parts></Parts>}></Route>
-          <Route path="purchase/:id" element={<Purchase></Purchase>}></Route>
           <Route path="pro" element={<Myprofiles></Myprofiles>}></Route>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="add" element={<AddTools></AddTools>}></Route>

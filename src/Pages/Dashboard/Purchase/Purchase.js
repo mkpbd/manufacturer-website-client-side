@@ -12,13 +12,18 @@ const Purchase = () => {
 
     const {isLoading, error, data, isFetching } = useItems();
   
+    if(error){
+        console.log(error);
+    }
   
     if(isLoading){
 
         return <Loading></Loading>
     }
-    const singleData = data?.map(d => d._id === id);
+   
 
+
+    console.log(data, " data ")
     
     const handleUpdateItem = (ev) => {
         ev.preventDefault();

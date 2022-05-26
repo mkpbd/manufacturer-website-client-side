@@ -1,21 +1,24 @@
 
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const SingleItem = () => {
+const SingleItem = (props) => {
+  const item = props.item;
     return (
         <Card>
         <Card.Img className='img-thumbnail border-0 p-0' variant="top" src="images/about-1.jpg" />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>{item?.itemName}</Card.Title>
           <Card.Text>
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
+           {item?.description.slice(0,100)}...
           </Card.Text>
-          <p className='text-primary'>Price: $100</p>
-            <p className='text-secondary py-3 d-flex justify-content-between'><span>minimum : 10</span> <span className='align-self-end'> quantity: 200</span></p>
-          <label htmlFor='qty'  className='form-control form-control-sm'>Quantity:  <input type="text"  /></label>
-          <Button className='my-3 '>Book Now</Button>
+          <p className='text-primary'>Price: {item?.price}</p>
+            <p className='text-secondary py-3 d-flex justify-content-between'><span>minimum : {item?.minimumOrderQty}</span> <span className='align-self-end'> quantity: 200</span></p>
+          <p className='form-control form-control-sm'>Quantity: {item?.quantity}</p>
+          <Button className='my-3 btn-secondary'>
+            <Link className='nav-link text-light' to={`/purchase/${item?._id}`}>Show Details</Link>
+          </Button>
         </Card.Body>
       </Card>
     );
