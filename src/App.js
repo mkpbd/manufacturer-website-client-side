@@ -19,6 +19,7 @@ import AddTools from "./Pages/Dashboard/AddTools/AddTools";
 import { ToastContainer } from "react-toastify";
 import Purchase from "./Pages/Dashboard/Purchase/Purchase";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
+import ShowDetails from "./Pages/Dashboard/Purchase/ShowDetails";
 function App() {
   return (
     <>
@@ -30,6 +31,8 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="/parts" element={<Register></Register>}></Route>
+        <Route path="/showdetail/:id" element={<ShowDetails></ShowDetails>}></Route>
+
         <Route path="purchase/:id" element={<Purchase></Purchase>}></Route>
         <Route
           path="dashboard"

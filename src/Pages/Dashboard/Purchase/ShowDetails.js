@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import Loading from '../../../components/Loading/Loading';
 import useItems from '../../../custom_hooks/useItems';
 
-const Purchase = () => {
+const ShowDetails = () => {
     const { id } = useParams();
     console.log("params", useParams())
     const {isLoading, error, data, isFetching } = useItems();
@@ -110,4 +110,4 @@ const Purchase = () => {
     );
 };
 
-export default Purchase;
+export default ShowDetails;
