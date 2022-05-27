@@ -10,7 +10,8 @@ const Navigation = () => {
 
   const logout = () => {
       signOut(auth);
-      //localStorage.removeItem('accessToken');
+      localStorage.removeItem('accessToken');
+    
   };
     return (
         <Navbar collapseOnSelect variant='dark' expand="lg" style={{ "color":"#fff", "borderBottom":"5px solid #fff", "background": "#1BA370"}}>

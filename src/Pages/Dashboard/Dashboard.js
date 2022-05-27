@@ -32,9 +32,11 @@ const Dashboard = () => {
               My History
             </Link>
 
-           
             <Link className="nav-link" to="/dashboard/add">
               Add parts
+            </Link>
+            <Link className="nav-link" to="/dashboard/user">
+             User
             </Link>
 
            
