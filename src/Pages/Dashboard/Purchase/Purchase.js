@@ -31,44 +31,15 @@ const Purchase = () => {
     return <Loading></Loading>;
   }
 
-  console.log("user", user);
+  // console.log("user", user);
   // console.log(id, 'Id')
   // console.log(data, " data ")
 
   const item = data?.filter((it) => it._id == id);
 
-  console.log(item, "items");
+  // console.log(item, "items");
 
-  const handleUpdateItem = (ev) => {
-    ev.preventDefault();
 
-    const qty = ev.target.productQty.value;
-
-    let result = {
-      qty,
-    };
-
-    if (!qty || qty <= 0) {
-      toast(" Product Qty is required");
-      return;
-    }
-
-    // fetch(`https://warm-mesa-46770.herokuapp.com/restock/${id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(result),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {console.log(data)
-    //     toast("qty update ");
-    //   }
-    //   )
-    //   .catch((err) => console.log(err));
-
-    // console.log("product Update", result);
-  };
 
   // const {isLoading, error, data, isFetching } = useQuery('purchase-id',()=>{
 
@@ -82,7 +53,24 @@ const Purchase = () => {
 
 const handleUserPurchaseOrderSubmit = data => {
   
+   console.log('fdasdfadf');
   console.log("purchase data",data);
+
+  const it = item[0];
+  const orderItems = {
+    productId: it._id,
+    itemName: it.itemName,
+    description: it.description,
+    price:it.price,
+    quantity: it.quantity,
+    clientEmail: user.email,
+    clientName: user.displayName,
+    totalPrice: data.quantity * it.price,
+    phoneNumber: data.phoneNumber,
+    address: data.address
+  }
+
+  console.log("orders",orderItems)
 }
 
   return (
@@ -139,13 +127,16 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>user name</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text"  disabled  defaultValue={user?.displayName}
-                {...register('username', {
+              <Form.Control type="text"  disabled value={user?.displayName}
+                {...register('username'
+               /* , {
                   required:{
                     value:true,
                     message:"user name is required"
                   }
-                })}
+                } */
+
+                )}
               />
             </Col>
           </Row>
@@ -155,13 +146,20 @@ const handleUserPurchaseOrderSubmit = data => {
             </Col>
             <Col>
               <Form.Control type="email" disabled  defaultValue={user?.email}
-              {...register('email', {
-                  required:{
-                    value:true,
-                    message:"user email is required"
-                  }
-                })}
+              {...register('email'
+              // , {
+              //     required:{
+              //       value:true,
+              //       message:"user email is required"
+              //     }
+              //   }
+              )}
                 />
+                 {/* {errors?.email?.type === "required" && (
+                    <span className="text-danger">
+                      {errors?.email?.message}
+                    </span>
+                  )} */}
             </Col>
           </Row>
           <Row className="my-2">
@@ -198,7 +196,9 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>Phone Number</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text"  />
+              <Form.Control type="text"  
+              {...register('phoneNumber')}
+              />
             </Col>
           </Row>
           <Row className="my-2">
@@ -206,7 +206,9 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>Address</Form.Label>
             </Col>
             <Col>
-              <Form.Control  as="textarea" />
+              <Form.Control  as="textarea" 
+              {...register('address')}
+              />
             </Col>
           </Row>
 
