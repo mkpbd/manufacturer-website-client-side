@@ -12,7 +12,7 @@ import { useForm, Controller } from "react-hook-form";
 const Purchase = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
-  console.log("params", useParams());
+  // console.log("params", useParams());
   const { isLoading, error, data, isFetching } = useItems();
   const {
     register,
@@ -139,7 +139,7 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>user name</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text"  disabled  value={user?.displayName}
+              <Form.Control type="text"  disabled  defaultValue={user?.displayName}
                 {...register('username', {
                   required:{
                     value:true,
@@ -154,7 +154,14 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>Email</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text" disabled  value={user?.email}/>
+              <Form.Control type="email" disabled  defaultValue={user?.email}
+              {...register('email', {
+                  required:{
+                    value:true,
+                    message:"user email is required"
+                  }
+                })}
+                />
             </Col>
           </Row>
           <Row className="my-2">
@@ -162,7 +169,28 @@ const handleUserPurchaseOrderSubmit = data => {
               <Form.Label>Order Quantity</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="number"   />
+              <Form.Control type="number" 
+              {...register('quantity', {
+                  required:{
+                    value:true,
+                    message:"product quantity"
+                  },
+                  min:{value:item[0].minimumOrderQty, message: `minimum quantity ${item[0].minimumOrderQty}`},
+                  max:{value: item[0].quantity, message:`maximum Quantity ${item[0].quantity} `}
+                  
+                })}
+                defaultValue={item[0].minimumOrderQty}
+                />
+                 {errors?.quantity?.type === "min" && (
+                    <span className="text-danger">
+                      {errors?.quantity?.message}
+                    </span>
+                  )}
+                  {errors?.quantity?.type === "max" && (
+                    <span className="text-danger">
+                      {errors?.quantity?.message}
+                    </span>
+                  )}
             </Col>
           </Row>
           <Row className="my-2">
