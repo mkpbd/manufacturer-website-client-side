@@ -12,13 +12,13 @@ const SingleItem = (props) => {
         <Card.Body>
           <Card.Title>{item?.itemName}</Card.Title>
           <Card.Text>
-           {item?.description.slice(0,100)}...
+           {item?.description?.slice(0,100)}...
           </Card.Text>
           <p className='text-primary'>Price: {item?.price}</p>
             <p className='text-secondary py-3 d-flex justify-content-between'><span>minimum : {item?.minimumOrderQty}</span> <span className='align-self-end'> quantity: 200</span></p>
           <p className='form-control form-control-sm'>Quantity: {item?.quantity}</p>
           <Button className='my-3 btn-secondary'>
-            <Link className='nav-link text-light' to={`/purchase/${item?._id}`}>Show Details</Link>
+            <Link className='nav-link text-light' to={`/purchase/${item?._id}`}>Buy now</Link>
           </Button>
         </Card.Body>
       </Card>

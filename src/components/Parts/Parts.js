@@ -13,7 +13,7 @@ const Parts = () => {
     <Container className="my-5">
         <h2 className="text-center display-3 py-4">Bicycle parts</h2>
       <Row md={3} sm={2}>
-       {data?.slice(0,6).map(ds => (<Col key={ds._id}><SingleItem item={ds}></SingleItem></Col>))
+       { data.length > 6 ? data?.slice(0,6).map(ds => (<Col key={ds._id}><SingleItem item={ds}></SingleItem></Col>)) : data?.map(ds => (<Col key={ds._id}><SingleItem item={ds}></SingleItem></Col>))
        
        }
 

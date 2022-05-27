@@ -38,11 +38,11 @@ const AddTools = () => {
         if (result.success) {
           const img = result.data.url;
           let part = {
-            productName: productName,
-            partsDescription: partsDescription,
-            productPrice: productPrice,
-            productQty: productQty,
-            minProductQty: minProductQty,
+            itemName: productName,
+            description: partsDescription,
+            price: productPrice,
+            quantity: productQty,
+            minimumOrderQty: minProductQty,
             image: img,
             email: user.email,
           };

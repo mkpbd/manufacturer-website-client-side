@@ -5,7 +5,8 @@ import { useQuery } from "react-query";
 const useItems = () => {
       const { isLoading, error, data, isFetching } = useQuery("items", () =>
       axios.get(
-        "http://localhost:3000/data/product.json"
+        // "http://localhost:3000/data/product.json"
+        "https://mysterious-fortress-37861.herokuapp.com/parts"
       ).then((res) => res.data)
 
   

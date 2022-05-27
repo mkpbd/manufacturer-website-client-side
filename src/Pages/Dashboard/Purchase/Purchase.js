@@ -8,12 +8,20 @@ import { toast } from "react-toastify";
 import Loading from "../../../components/Loading/Loading";
 import useItems from "../../../custom_hooks/useItems";
 import auth from "../../../firebase.init";
-
+import { useForm, Controller } from "react-hook-form";
 const Purchase = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   console.log("params", useParams());
   const { isLoading, error, data, isFetching } = useItems();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    trigger,
+    watch,
+  } = useForm();
+
 
   if (error) {
     console.log(error);
@@ -71,6 +79,12 @@ const Purchase = () => {
 
   // })
 
+
+const handleUserPurchaseOrderSubmit = data => {
+  
+  console.log("purchase data",data);
+}
+
   return (
     <Container>
       <Card className="border-0">
@@ -119,13 +133,20 @@ const Purchase = () => {
         ))}
       </Card>
       <Card className="my-4 border-0 bg-light px-3 py-5 w-75 mx-auto">
-        <Form>
+        <Form onSubmit={handleSubmit(handleUserPurchaseOrderSubmit)}>
           <Row className="my-2">
             <Col md="3">
               <Form.Label>user name</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text" disabled />
+              <Form.Control type="text"  disabled  value={user?.displayName}
+                {...register('username', {
+                  required:{
+                    value:true,
+                    message:"user name is required"
+                  }
+                })}
+              />
             </Col>
           </Row>
           <Row className="my-2">
@@ -133,7 +154,7 @@ const Purchase = () => {
               <Form.Label>Email</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text" disabled />
+              <Form.Control type="text" disabled  value={user?.email}/>
             </Col>
           </Row>
           <Row className="my-2">
@@ -141,7 +162,7 @@ const Purchase = () => {
               <Form.Label>Order Quantity</Form.Label>
             </Col>
             <Col>
-              <Form.Control type="text"  />
+              <Form.Control type="number"   />
             </Col>
           </Row>
           <Row className="my-2">
