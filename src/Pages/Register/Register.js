@@ -26,12 +26,11 @@ const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-	const [sendEmailVerification, sendingEmail, sendEmailerror] = useSendEmailVerification(
-		auth
-	  );
+  const [sendEmailVerification, sendingEmail, sendEmailerror] =
+    useSendEmailVerification(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  // const [token]  = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   const navigate = useNavigate();
 
@@ -51,20 +50,20 @@ const Register = () => {
     );
   }
 
-  // if (token) {
-  //     navigate('/appointment');
-  // }
+  if (token) {
+    navigate("/");
+  }
   const onSubmitForm = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.username });
-	await sendEmailVerification();
+    await sendEmailVerification();
 
-	if(sendEmailerror){
-		toast.error(sendEmailerror.message)
-	}else{
-		toast.success("Email verification has been send");
-	}
-	
+    if (sendEmailerror) {
+      toast.error(sendEmailerror.message);
+    } else {
+      toast.success("Email verification has been send");
+    }
+
     console.log(data);
   };
 
@@ -77,30 +76,26 @@ const Register = () => {
         style={{ backgroundImage: "url('images/bg-01.jpg')" }}
       >
         <div className="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-		<span className="login100-form-title p-b-53 mb-4">
-              Register Form
-            </span>
-            <Row className="d-flex px-5 ">
-              <button className="btn-face m-b-20 me-3 btn transparent">
-                <FaGithub className="h2 me-2"></FaGithub>
-                Github
-              </button>
+          <span className="login100-form-title p-b-53 mb-4">Register Form</span>
+          <Row className="d-flex px-5 ">
+            <button className="btn-face m-b-20 me-3 btn transparent">
+              <FaGithub className="h2 me-2"></FaGithub>
+              Github
+            </button>
 
-              <button
-                onClick={()=> signInWithGoogle()}
-                className="btn-google m-b-20 bg-primary text-light btn transparent"
-              >
-                <FaGoogle className="h2 me-2 text-warning"></FaGoogle>
-                Google
-              </button>
-            </Row>
-		
-		  <form
+            <button
+              onClick={() => signInWithGoogle()}
+              className="btn-google m-b-20 bg-primary text-light btn transparent"
+            >
+              <FaGoogle className="h2 me-2 text-warning"></FaGoogle>
+              Google
+            </button>
+          </Row>
+
+          <form
             onSubmit={handleSubmit(onSubmitForm)}
             className="login100-form validate-form flex-sb flex-w p-5"
           >
-          
-
             <Row>
               <div className="p-t-31 p-b-9 my-2">
                 <label htmlFor="userName" className="txt1">

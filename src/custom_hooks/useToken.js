@@ -5,11 +5,13 @@ const useToken = user =>{
     useEffect( () =>{
         const email = user?.user?.email;
         const currentUser = {email: email};
+        console.log('users ', user);
         if(email){
-            fetch(`https://secret-dusk-46242.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method:'PUT',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    //authorization:`Bearer ${localStorage.getItem(accessToken)}`
                 },
                 body:JSON.stringify(currentUser)
             })

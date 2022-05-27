@@ -66,7 +66,7 @@ const handleUserPurchaseOrderSubmit = data => {
     clientEmail: user.email,
     clientName: user.displayName,
     totalPrice: data.quantity * it.price,
-    phoneNumber: data.phoneNumber,
+    phoneNumber: data.phoneNumber, 
     address: data.address
   }
 
@@ -74,6 +74,7 @@ const handleUserPurchaseOrderSubmit = data => {
 
   axios.post('http://localhost:5000/order', orderItems).then(res =>{ 
     
+  console.log(res.data);
   const result = res.data;
 
   if(result.result.insertedId){

@@ -31,29 +31,31 @@ const Login = () => {
 
   let signInError;
 
-  // const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
+ 
   
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  useEffect( () =>{
+    if (token) {
+        navigate(from, { replace: true });
+    }
+}, [token, from, navigate])
+
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
 
-      if(user || gUser){
-        navigate(from, { replace: true });
-      }
+      // if(user || gUser){
+      //   navigate(from, { replace: true });
+      // }
        
   
 
 
-    // useEffect( () =>{
-  //     if (token) {
-  //         navigate(from, { replace: true });
-  //     }
-  // }, [token, from, navigate])
 
 
   const onSubmitForm = (data) => {
