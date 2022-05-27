@@ -59,7 +59,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
 
-      <Purchase></Purchase>
+     
       <MainFooter></MainFooter>
      
     </>

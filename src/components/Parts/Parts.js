@@ -17,9 +17,6 @@ const Parts = () => {
        
        }
 
-
-       
-     
       </Row>
     </Container>
   );
