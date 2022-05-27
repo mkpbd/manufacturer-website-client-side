@@ -33,6 +33,7 @@ const Login = () => {
 
   const [token] = useToken(user || gUser);
 
+
  
   
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const Login = () => {
 
 
   const onSubmitForm = (data) => {
-    signInWithEmailAndPassword(data.email, data.password);
+    signInWithEmailAndPassword(data.username, data.password);
     console.log(data);
   };
 

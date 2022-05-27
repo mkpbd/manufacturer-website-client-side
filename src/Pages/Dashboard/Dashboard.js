@@ -1,6 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import useAdmin from "../../custom_hooks/useAdmin";
+import auth from "../../firebase.init";
 import "./Dashboard.css";
 const Dashboard = () => {
   const openNav = () => {
@@ -10,6 +13,9 @@ const Dashboard = () => {
   const closeNav = () => {
     document.getElementById("mySidenav").style.width = "0";
   };
+
+  const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
   return (
     <Container fluid>
@@ -35,9 +41,9 @@ const Dashboard = () => {
             <Link className="nav-link" to="/dashboard/add">
               Add parts
             </Link>
-            <Link className="nav-link" to="/dashboard/user">
+            {admin && <Link className="nav-link" to="/dashboard/user">
              User
-            </Link>
+            </Link>}
 
            
           </div>
