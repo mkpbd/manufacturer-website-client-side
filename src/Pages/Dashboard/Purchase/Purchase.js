@@ -53,8 +53,8 @@ const Purchase = () => {
 
 const handleUserPurchaseOrderSubmit = data => {
   
-   console.log('fdasdfadf');
-  console.log("purchase data",data);
+
+  // console.log("purchase data",data);
 
   const it = item[0];
   const orderItems = {
@@ -70,7 +70,20 @@ const handleUserPurchaseOrderSubmit = data => {
     address: data.address
   }
 
-  console.log("orders",orderItems)
+  // console.log("orders",orderItems)
+
+  axios.post('http://localhost:5000/order', orderItems).then(res =>{ 
+    
+  const result = res.data;
+
+  if(result.result.insertedId){
+    toast.success("order is success")
+  }else{
+    toast.error("order is Failed");
+  }
+console.log("data has benn inserted",   res.data)
+
+});
 }
 
   return (
