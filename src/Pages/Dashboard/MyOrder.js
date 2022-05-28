@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import auth from "../../firebase.init";
 const MyOrder = () => {
@@ -61,12 +62,15 @@ const MyOrder = () => {
       </thead>
       <tbody>
         {data?.map(item => (
-          <tr>
+          <tr key={item._id}>
           <td>{item.itemName}</td>
           <td>{item.price}</td>
           <td>{item.quantity}</td>
           <td>{item.totalPrice}</td>
-          <td><button className="btn btn-sm btn-success">Payment</button></td>
+          <td>
+            {item.totalPrice && !item.paid  && <Link to={`/dashboard/payment/${item._id}`}> <button className="btn btn-sm btn-success">Payment</button></Link>}
+            {item.totalPrice && item.paid  &&  <button className="btn btn-sm btn-success">Paid</button>}
+          </td>
           <td><button className="btn btn-sm btn-danger">Cancel</button></td>
         </tr>
 

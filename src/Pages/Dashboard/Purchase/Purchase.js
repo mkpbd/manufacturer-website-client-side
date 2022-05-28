@@ -62,7 +62,7 @@ const handleUserPurchaseOrderSubmit = data => {
     itemName: it.itemName,
     description: it.description,
     price:it.price,
-    quantity: it.quantity,
+    quantity: data.quantity,
     clientEmail: user.email,
     clientName: user.displayName,
     totalPrice: data.quantity * it.price,
