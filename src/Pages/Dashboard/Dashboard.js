@@ -37,13 +37,17 @@ const Dashboard = () => {
             <Link className="nav-link" to="/dashboard/pro">
               My History
             </Link>
-
+            <Link className="nav-link" to="/dashboard/user-profile">
+              My Profiles
+            </Link>
+            {admin &&  <><Link className="nav-link" to="/dashboard/user">
+             User
+            </Link>
             <Link className="nav-link" to="/dashboard/add">
               Add parts
             </Link>
-            {admin && <Link className="nav-link" to="/dashboard/user">
-             User
-            </Link>}
+            
+            </>}
 
            
           </div>

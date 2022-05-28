@@ -42,8 +42,8 @@ const UserProfile = () => {
             email: user.email,
           };
           // send to your database
-          fetch(`http://localhost:5000/myprofile?email=${user.email}`, {
-            method: "POST",
+          fetch(`http://localhost:5000/myprofile/${user.email}`, {
+            method: "PUT",
             headers: {
               "content-type": "application/json",
               // authorization: `Bearer ${localStorage.getItem('accessToken')}`
