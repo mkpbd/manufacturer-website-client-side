@@ -19,7 +19,7 @@ const UpdateTools = () => {
     });
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/part/${id}`).then(res => res.json()).then(data => {
+        fetch(`https://mysterious-fortress-37861.herokuapp.com/part/${id}`).then(res => res.json()).then(data => {
             console.log("data",data);
             reset(data);
             setData(data);
@@ -70,7 +70,7 @@ const UpdateTools = () => {
 
             console.log('parts', part)
             // send to your database
-            fetch(`http://localhost:5000/parts/${id}`, {
+            fetch(`https://mysterious-fortress-37861.herokuapp.com/parts/${id}`, {
               method: "PATCH",
               headers: {
                 "content-type": "application/json",

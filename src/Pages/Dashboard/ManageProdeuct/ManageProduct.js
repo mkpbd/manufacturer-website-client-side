@@ -43,7 +43,7 @@ const ManageProduct = () => {
   const handleDelete = id =>{
 
     console.log('delete id = ', id);
-    fetch(`http://localhost:5000/parts/${id}`,{
+    fetch(`https://mysterious-fortress-37861.herokuapp.com/parts/${id}`,{
       method:'DELETE'
     }).then(res => res.json())
     .then(data => {
