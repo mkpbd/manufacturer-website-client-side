@@ -16,7 +16,20 @@ Live WebSite Link:  [https://bicycle-parts-manufactur-14c27.web.app/](https://bi
 # payment option 
 # make admin rule 
 # others 
-In the project directory, you can run:
+
+## Tools use 
+-  javascript
+-  React js
+-  Express js
+-  Node js
+-  firebase authentication
+-  firebase hosting
+-  heroku server 
+-  React Query
+-  React hook form
+-  json web token 
+-  toast 
+-  confirm alert  
 
 ### `npm start`
 
