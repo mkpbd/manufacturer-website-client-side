@@ -23,6 +23,7 @@ import ShowDetails from "./Pages/Dashboard/Purchase/ShowDetails";
 import User from "./Pages/Dashboard/User";
 import RequireAdmin from "./components/RequireAuth/RequireAdmin";
 import HomePortfolio from "./Pages/Portfolio/HomePortfolio";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 function App() {
   return (
     <>
@@ -53,6 +54,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="add" element={<AddTools></AddTools>}></Route>
           <Route path="user" element={<RequireAdmin><User></User></RequireAdmin>}></Route>
+          <Route path="user-profile" element={<UserProfile></UserProfile>}></Route>
 
 
           {/* <Route path="review" element={<MyReview></MyReview>}></Route>
