@@ -47,6 +47,7 @@ function App() {
           }
         >
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path="user-order" element={<MyOrder></MyOrder>}></Route>
           <Route path="parts/:id" element={<Parts></Parts>}></Route>
           <Route path="pro" element={<Myprofiles></Myprofiles>}></Route>
           <Route index element={<MyOrder></MyOrder>}></Route>
