@@ -26,7 +26,7 @@ const Navigation = () => {
           <Nav className="me-auto">
             <Link to='/' className='nav-link'>Home</Link>
             <Link to='/blog' className='nav-link'>Blog</Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            <Link to="/portfolio" className='nav-link'>Portfolio</Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
            
           </Nav>

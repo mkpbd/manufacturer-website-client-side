@@ -1,0 +1,22 @@
+1. hosting 
+    ********** firebase global install =========
+    1. firebase login
+    2. firebase init
+        ** some questing ask
+        1. proced now (y)
+        2. existing project  -> select project name -> 
+        3. single page url write (y)
+        
+
+    3. firebase build
+    4. firebase deploy
+
+
+
+    // heroku deploy
+    1. heroku login 
+    2. git init
+    3. git commit 
+    4. git push
+    5. git push heroku main
+    

@@ -22,6 +22,7 @@ import RequireAuth from "./components/RequireAuth/RequireAuth";
 import ShowDetails from "./Pages/Dashboard/Purchase/ShowDetails";
 import User from "./Pages/Dashboard/User";
 import RequireAdmin from "./components/RequireAuth/RequireAdmin";
+import HomePortfolio from "./Pages/Portfolio/HomePortfolio";
 function App() {
   return (
     <>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="/parts" element={<Register></Register>}></Route>
+        <Route path="/portfolio" element={<HomePortfolio></HomePortfolio>}></Route>
         <Route path="/showdetail/:id" element={<ShowDetails></ShowDetails>}></Route>
 
         <Route path="purchase/:id" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
