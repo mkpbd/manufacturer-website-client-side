@@ -14,20 +14,20 @@ const Payment = () => {
   const { id } = useParams();
  
   //  const { data:payment,isLoading, error, isError, isFetching} = useQuery(['payments',id, items], ()=>{
-  //      axios.get(`http://localhost:5000/order/${id}`)
+  //      axios.get(`https://mysterious-fortress-37861.herokuapp.com/order/${id}`)
   //      .then(res =>{
   //         console.log('data', res.data)
   //             return res.data;
   //      } )
 
-  //     // fetch(`http://localhost:5000/order/${id}`,{
+  //     // fetch(`https://mysterious-fortress-37861.herokuapp.com/order/${id}`,{
   //     //     method:'GET',
   //     // }).then(res =>res.json()).then(data => data);
   //  })
 
   const [data, setData] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`)
+    fetch(`https://mysterious-fortress-37861.herokuapp.com/order/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [id]);

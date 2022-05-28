@@ -14,10 +14,10 @@ const CheckoutForm = ({payment}) => {
 
     useEffect(() => {
       // Create PaymentIntent as soon as the page loads
-      fetch("http://localhost:5000/create-payment-intent", {
+      fetch("https://mysterious-fortress-37861.herokuapp.com/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(price),
+        body: JSON.stringify({price}),
       })
         .then((res) => res.json())
         .then((data) => setClientSecret(data.clientSecret));
