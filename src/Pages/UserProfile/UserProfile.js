@@ -44,7 +44,7 @@ const UserProfile = () => {
             email: user.email,
           };
           // send to your database
-          fetch(`http://localhost:5000/myprofile/${user.email}`, {
+          fetch(`https://mysterious-fortress-37861.herokuapp.com/myprofile/${user.email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -72,7 +72,7 @@ const UserProfile = () => {
   useEffect(
       ()=>{
 
-        axios.get(`http://localhost:5000/myprofile?emailId=${user.email}`, {
+        axios.get(`https://mysterious-fortress-37861.herokuapp.com/myprofile?emailId=${user.email}`, {
           headers:{
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
           },

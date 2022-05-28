@@ -5,7 +5,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const UserRoles = ({ user, refetch }) => {
   const { email, role, _id} = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://mysterious-fortress-37861.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -26,7 +26,7 @@ const UserRoles = ({ user, refetch }) => {
   };
 
   const removeRoleForAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${_id}`, {
+    fetch(`https://mysterious-fortress-37861.herokuapp.com/user/admin/${_id}`, {
         method: "PATCH",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -9,7 +9,7 @@ const useReview = () => {
     const { isLoading, error, data, isFetching } = useQuery(["items-review",items], () =>
     axios.get(
       // "http://localhost:3000/data/product.json"
-     "http://localhost:5000/review"
+     "https://mysterious-fortress-37861.herokuapp.com/review"
 
     ).then((res) => res.data));
 

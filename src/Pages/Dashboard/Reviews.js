@@ -24,7 +24,7 @@ const Reviews = () => {
               email: user.email,
             };
             // send to your database
-            fetch("http://localhost:5000/review", {
+            fetch("https://mysterious-fortress-37861.herokuapp.com/review", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

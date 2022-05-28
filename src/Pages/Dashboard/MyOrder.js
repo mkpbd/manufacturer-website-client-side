@@ -9,7 +9,7 @@ const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
   // const {isLoading, erros, data, refetch} = useQuery(['myorder',user],
   //    ()=>{
-  //     axios.get(`http://localhost:5000/order?clientEmail=${user.email}`, {
+  //     axios.get(`https://mysterious-fortress-37861.herokuapp.com/order?clientEmail=${user.email}`, {
       
   //       headers:{
   //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const MyOrder = () => {
   useEffect(
       ()=>{
     
-        axios.get(`http://localhost:5000/order?clientEmail=${user.email}`, {
+        axios.get(`https://mysterious-fortress-37861.herokuapp.com/order?clientEmail=${user.email}`, {
         
           headers:{
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

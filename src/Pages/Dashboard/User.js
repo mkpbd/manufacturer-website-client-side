@@ -7,7 +7,7 @@ import UserRoles from "./UserRoles";
 
 const User = () => {
     const { data: users, isLoading, refetch } = useQuery('users', 
-    () => fetch('http://localhost:5000/user', {
+    () => fetch('https://mysterious-fortress-37861.herokuapp.com/user', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

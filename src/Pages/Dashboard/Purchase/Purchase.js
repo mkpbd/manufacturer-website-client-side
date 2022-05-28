@@ -72,7 +72,7 @@ const handleUserPurchaseOrderSubmit = data => {
 
   // console.log("orders",orderItems)
 
-  axios.post('http://localhost:5000/order', orderItems).then(res =>{ 
+  axios.post('https://mysterious-fortress-37861.herokuapp.com/order', orderItems).then(res =>{ 
     
   console.log(res.data);
   const result = res.data;
