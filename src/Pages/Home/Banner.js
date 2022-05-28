@@ -21,7 +21,7 @@ const Banner = () => {
       {data?.map((d) => (
           <Carousel.Item key={d._id}>
             <img className="d-block  justify-content-center" src={d.image} alt={d.itemName} />
-            <Carousel.Caption>
+            <Carousel.Caption className="bg-dark ">
               <h3>{d.itemName}</h3>
               <p>{d.title}</p>
             </Carousel.Caption>
