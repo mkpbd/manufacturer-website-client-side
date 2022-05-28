@@ -12,7 +12,7 @@ const MyService = () => {
                             <h1 className="fw-bold p-0">Services</h1>
                         </div>
                         <p className="text-gray-700 fs-18 fs-lg mb-4 mb-md-5 lh-lg">
-                            We craft digital, graphic and dimensional thinking, to create category leading brand experiences that have meaning .
+                        With over 5+ years of expertise in React.js, we have tremendous expertise in working on React js, Redux, react hooks. You will get an amazing service where all the smaller details of the design will be taken care of..
                         </p>
                     </div>
                 </div>
@@ -21,7 +21,7 @@ const MyService = () => {
                         <div className="card rounded shadow border-0">
                             <div className="card-body p-4 m-2">
                                 <div className="bg-soft-alt-orange d-flex justify-content-center align-items-center thumb-xl  rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-layers align-self-center svg-orange icon-md"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>  
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-layers align-self-center svg-orange icon-md"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>  
                                 </div>
                                 <h5 className="text-dark fs-22 fw-medium my-4">Awesome Support</h5>
                                 <p className="text-muted pb-4">Some quick example text to build on the card title and make up the bulk of the card's content platform.</p>
@@ -32,7 +32,7 @@ const MyService = () => {
                         <div className="card rounded shadow  border-0">
                             <div className="card-body p-4 m-2">
                                 <div className="bg-soft-alt-info d-flex justify-content-center align-items-center thumb-xl  rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-dollar-sign align-self-center svg-info icon-md"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>  
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-dollar-sign align-self-center svg-info icon-md"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>  
                                 </div>
                                 <h5 className="text-dark fs-22 fw-medium my-4">Dynamic Growth</h5>
                                 <p className="text-muted pb-4">Credibly brand standards compliant users without extensible services. Anibh euismod tincidunt.</p>
@@ -43,7 +43,7 @@ const MyService = () => {
                         <div className="card rounded shadow  border-0">
                             <div className="card-body p-4 m-2">
                                 <div className="bg-soft-alt-success d-flex justify-content-center align-items-center thumb-xl  rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-check-square align-self-center svg-success icon-md"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>  
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check-square align-self-center svg-success icon-md"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>  
                                 </div>
                                 <h5 className="text-dark fs-22 fw-medium my-4">Branding Identity</h5>
                                 <p className="text-muted pb-4">Separated they live in Bookmarksgrove right at the coast of the Semantics, and large.</p>
