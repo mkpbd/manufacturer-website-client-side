@@ -46,6 +46,9 @@ const Dashboard = () => {
             <Link className="nav-link" to="/dashboard/add">
               Add parts
             </Link>
+            <Link className="nav-link" to="/dashboard/manage">
+              Manage product
+            </Link>
             
             </>}
 

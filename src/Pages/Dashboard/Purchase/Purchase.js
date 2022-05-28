@@ -119,7 +119,7 @@ console.log("data has benn inserted",   res.data)
               <p>
                 Description : <span className="ms-2"> {it.description}</span>{" "}
               </p>
-              <p className="d-flex my-3 align-items-center">
+              {/* <p className="d-flex my-3 align-items-center">
                 <span> Qty</span>{" "}
                 <input
                   className="form-control ms-4 form-control-sm"
@@ -129,7 +129,7 @@ console.log("data has benn inserted",   res.data)
                   defaultValue="10"
                 />
                 <button className="btn btn-success ms-3">Order Now</button>
-              </p>
+              </p> */}
             </Col>
           </Row>
         ))}

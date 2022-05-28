@@ -25,6 +25,8 @@ import RequireAdmin from "./components/RequireAuth/RequireAdmin";
 import HomePortfolio from "./Pages/Portfolio/HomePortfolio";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import Reviews from "./Pages/Dashboard/Reviews";
+import ManageProduct from "./Pages/Dashboard/ManageProdeuct/ManageProduct";
+import UpdateTools from "./Pages/Dashboard/ManageProdeuct/UpdateTools";
 function App() {
   return (
     <>
@@ -57,6 +59,8 @@ function App() {
           <Route path="user" element={<RequireAdmin><User></User></RequireAdmin>}></Route>
           <Route path="user-profile" element={<UserProfile></UserProfile>}></Route>
           <Route path="review" element={<Reviews></Reviews>}></Route>
+          <Route path="manage" element={<ManageProduct></ManageProduct>}></Route>
+          <Route path="update/:id" element={<UpdateTools></UpdateTools>}></Route>
 
 
           {/* <Route path="review" element={<MyReview></MyReview>}></Route>
