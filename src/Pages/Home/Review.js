@@ -19,13 +19,13 @@ const Review = () => {
   }
 
 
-  console.log("data  for revies ", data);
+   console.log("data  for revies ", data?.reverse());
 
 
   return (
     <Container className="py-5 my-5 bg-light">
       <Carousel nextIcon='' prevIcon='' variant="dark" indicatorLabels="dfadsfas">
-        {data?.map((d) => (
+        {data?.slice(0,3)?.map((d) => (
           <Carousel.Item interval={2000} key={d._id}>
             <Row xm="1" md="2">
               <Col className="border-0 col-sm-4">

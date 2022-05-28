@@ -34,9 +34,9 @@ const Dashboard = () => {
             <Link className="nav-link" to="/dashboard">
               My orders
             </Link>
-            <Link className="nav-link" to="/dashboard/review">
+            {!admin &&  <Link className="nav-link" to="/dashboard/review">
                Review
-            </Link>
+            </Link>}
             <Link className="nav-link" to="/dashboard/user-profile">
               My Profiles
             </Link>
