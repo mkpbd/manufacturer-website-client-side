@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import Loading from "../../components/Loading/Loading";
 import UserRoles from "./UserRoles";
 
+
 const User = () => {
     const { data: users, isLoading, refetch } = useQuery('users', 
     () => fetch('http://localhost:5000/user', {
@@ -11,10 +12,18 @@ const User = () => {
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()));
+    }).then(res => res.json())
+    .then(data => { console.log('data'); return data})
+    
+    );
+
+    
     if (isLoading) {
         return <Loading></Loading>
     }
+
+  
+    
   return (
     <Table striped bordered hover>
       <thead>

@@ -237,7 +237,7 @@ const UserProfile = () => {
       </thead>
       <tbody>
         {userData?.map(item => (
-          <tr>
+          <tr key={item._id}>
           <td>{item.userName}</td>
           <td>{item.email}</td>
           <td>{item.education}</td>
