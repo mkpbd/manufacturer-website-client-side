@@ -1,18 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
+import { useQuery } from "react-query";
 import Loading from "../../components/Loading/Loading";
 import useItems from "../../custom_hooks/useItems";
-
+import useReview from '../../custom_hooks/useReview';
+import { FaStar } from 'react-icons/fa';
 const Review = () => {
-  const { isLoading, data } = useItems();
+  
+  const {  isLoading, isError, data, error } = useReview()
 
+
+  if(isError){
+    return <h2 className="text-danger">{error.message}</h2>
+  }
   if (isLoading) {
     return <Loading></Loading>;
   }
+
+
+  console.log("data  for revies ", data);
+
+
   return (
     <Container className="py-5 my-5 bg-light">
       <Carousel nextIcon='' prevIcon='' variant="dark" indicatorLabels="dfadsfas">
-        {data.map((d) => (
+        {data?.map((d) => (
           <Carousel.Item interval={2000} key={d._id}>
             <Row xm="1" md="2">
               <Col className="border-0 col-sm-4">
@@ -30,9 +43,32 @@ const Review = () => {
               </Col>
               <Col className="col-sm-8">
                 <Carousel.Caption>
-                  <h3 className="text-dark">{d.itemName}</h3>
-                  <p className="text-dark">{d.title}</p>
-                  <h4 className="text-dark"> Client Name</h4>
+                  <h4 className="text-primary my-2">{d.review}</h4>
+                  <p className="text-dark">{(d.rating == 1 ?<>
+                    <FaStar className="text-success h3"></FaStar>
+  
+                  </> : d.rating == 2 ? <>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  </> :  d.rating == 3 ? <>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  </> : 
+                   d.rating == 4 ? <>
+                   <FaStar className="text-success h3"></FaStar>
+                   <FaStar className="text-success h3"></FaStar>
+                   <FaStar className="text-success h3"></FaStar>
+                   <FaStar className="text-success h3"></FaStar>
+                   </>
+                  :  d.rating == 5 ? <>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  <FaStar className="text-success h3"></FaStar>
+                  </>: '')}</p>
+                  <h4 className="text-dark"> {d.userName}</h4>
                 </Carousel.Caption>
               </Col>
             </Row>

@@ -132,9 +132,6 @@ const Reviews = () => {
                         )}
                       </div>
                     </div>
-                 
-  
-                 
                   </div>
   
            
