@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 const Education = () => {
   return (
@@ -14,8 +15,8 @@ const Education = () => {
               Education &amp; Experience
             </h2>
             <p className="text-gray-700 fs-18 fs-lg mb-4 mb-md-5 lh-lg">
-              We craft digital, graphic and dimensional thinking, to create
-              category leading brand experiences that have meaning .
+              I'm Frontend web developer in React js Bootstrap, HTML, CSS,
+              Tailwind css, javaScript Node and MongoDB
             </p>
           </div>
         </div>
@@ -52,35 +53,37 @@ const Education = () => {
                       <Accordion.Item eventKey="0">
                         <Accordion.Header>
                           {" "}
-                          MSc IT Master Degree
+                          Master ‘S  OF ECONOMICS 
                           <span className="fw-medium text-primary ms-auto fs-14">
-                            2010 - 2012
+                            2014 - 2015
                           </span>
                         </Accordion.Header>
                         <Accordion.Body>
                           <p className="text-muted mb-3">
-                            Harvard University is an educational institution
-                            that offers graduate, professional, and research
-                            programs in the fields of and public health.
+                            National university Institute : TONGI GOVT COLLEGE,
+                            Result : 1st Class Pas.Year : 2015 , Duration : 1
+                            year
                           </p>
-                          <p className="fw-medium">
-                            Harvard University, Cambridge, MA, United States
-                          </p>
+                          <p className="fw-medium">Gazipur</p>
                         </Accordion.Body>
                       </Accordion.Item>
                       <Accordion.Item eventKey="1">
-                        <Accordion.Header>Accordion Item #2</Accordion.Header>
+                        <Accordion.Header>
+                          BSS (Hons) OF ECONOMICS{" "}
+                          <span className="fw-medium text-primary ms-auto fs-14">
+                            2009 - 2013
+                          </span>{" "}
+                        </Accordion.Header>
                         <Accordion.Body>
                           <p className="text-muted mb-3">
-                            Harvard University is an educational institution
-                            that offers graduate, professional, and research
-                            programs in the fields of and public health.
+                            National university Institute : TONGI GOVT COLLEGE,
+                            Result : 1st Class Pas.Year : 2013 , Duration : 4
+                            year
                           </p>
-                          <p className="fw-medium">
-                            Harvard University, Cambridge, MA, United States
-                          </p>
+                          <p className="fw-medium">Gazipur</p>
                         </Accordion.Body>
                       </Accordion.Item>
+                
                     </Accordion>
                   </div>
                 </div>
@@ -114,40 +117,46 @@ const Education = () => {
               <div className="col-lg-8 col-md-6">
                 <div className="card rounded bg-white  h-100 border-0">
                   <div className="card-body p-0">
-                  <Accordion>
-                      <Accordion.Item eventKey="0">
-                        <Accordion.Header>
-                          {" "}
-                          MSc IT Master Degree
-                          <span className="fw-medium text-primary ms-auto fs-14">
-                            2010 - 2012
-                          </span>
-                        </Accordion.Header>
-                        <Accordion.Body>
-                          <p className="text-muted mb-3">
-                            Harvard University is an educational institution
-                            that offers graduate, professional, and research
-                            programs in the fields of and public health.
-                          </p>
-                          <p className="fw-medium">
-                            Harvard University, Cambridge, MA, United States
-                          </p>
-                        </Accordion.Body>
-                      </Accordion.Item>
-                      <Accordion.Item eventKey="1">
-                        <Accordion.Header>Accordion Item #2</Accordion.Header>
-                        <Accordion.Body>
-                          <p className="text-muted mb-3">
-                            Harvard University is an educational institution
-                            that offers graduate, professional, and research
-                            programs in the fields of and public health.
-                          </p>
-                          <p className="fw-medium">
-                            Harvard University, Cambridge, MA, United States
-                          </p>
-                        </Accordion.Body>
-                      </Accordion.Item>
-                    </Accordion>
+                    <div>
+                      <label htmlFor="html">
+                        HTML 
+                        <ProgressBar striped variant="success" now={60} />
+                      </label>
+                      <label>
+                        CSS 
+                        <ProgressBar striped variant="info" now={70} />
+                      </label>
+                     <label>
+                       Bootstrap
+                       <ProgressBar striped variant="warning" now={80} />
+                     </label>
+                     <label>
+                       Tailwind Css
+                       <ProgressBar striped variant="danger" now={80} />
+                     </label>
+                     
+                     <label>
+                       JavaScript
+                       <ProgressBar striped variant="danger" now={60} />
+                     </label>
+                     <label>
+                       React js
+                       <ProgressBar striped variant="danger" now={60} />
+                     </label>
+                     <label>
+                       Node js
+                       <ProgressBar striped variant="danger" now={50} />
+                     </label>
+                     <label>
+                       MongoDB
+                       <ProgressBar striped variant="danger" now={50} />
+                     </label>
+                     <label>
+                       Express js
+                       <ProgressBar striped variant="danger" now={50} />
+                     </label>
+
+                    </div>
                   </div>
                 </div>
               </div>

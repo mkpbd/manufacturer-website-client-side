@@ -31,7 +31,7 @@ const Navigation = () => {
            
           </Nav>
           <Nav>
-            <Link to='/dashboard' className='nav-link'>Dashboard</Link>
+           {user &&  <Link to='/dashboard' className='nav-link'>Dashboard</Link>}
             
            {user ?  <button type='submit' onClick={logout} className='nav-link'>Log Out</button>: <Link to='/login' className='nav-link'>Login</Link>}
             <Link to='/register' className='nav-link'>Register</Link>

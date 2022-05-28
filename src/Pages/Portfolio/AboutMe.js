@@ -9,23 +9,10 @@ const AboutMe = () => {
             <div className="row align-items-center">                
                 <div className="col-lg-6 align-self-center">
                     <h5 className="fs-24 text-dark fw-medium"><mark>Personal Details</mark></h5>       
-                    <h4 className="fw-normal lh-base text-gray-700 mb-4 fs-20">It is a long established fact 
-                        that a reader will be distracted by the readable content of a page when looking at its layout. 
+                    <h4 className="fw-normal lh-base text-gray-700 mb-4 fs-20">
+                    To work in a meaningful and challenging position that enables me to develop myself as a professional and permits scope for advancement. Disney Company
                     </h4>
-                    <div className="social">
-                        <a href="#">
-                            <i className="lab la-github github me-1"></i>
-                        </a>
-                        <a href="#">
-                            <i className="lab la-twitter twitter me-1"></i>
-                        </a>
-                        <a href="#">
-                            <i className="lab la-google google me-1"></i>
-                        </a>
-                        <a href="#">
-                            <i className="lab la-linkedin-in linkedin me-1"></i>
-                        </a>
-                    </div>
+                  
                 </div>
                 <div className="col-lg-5 ms-auto align-self-center">
                     <div className="mb-5 mb-lg-0">
