@@ -1,20 +1,22 @@
-import React from "react";
-import { Form } from "react-bootstrap";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Col, Form, Row, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const UserProfile = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm();
-  const imageStorageKey = "57aa6916ec4d0781296d7c959206f0d7";
 
+
+  const imageStorageKey = "57aa6916ec4d0781296d7c959206f0d7";  
   const heandleSubmitProducts = (data) => {
     // const image = data.images[0];
     // console.log("images", image);
@@ -37,7 +39,7 @@ const UserProfile = () => {
             linkedIn: data.linkedIn,
             phoneNumber: data.phoneNumber,
             education: data.education,
-            location: data.city,
+            location: data.location,
             userName: user.displayName,
             email: user.email,
           };
@@ -53,7 +55,7 @@ const UserProfile = () => {
             .then((res) => res.json())
             .then((inserted) => {
               console.log("insertd", inserted);
-              if (inserted.result.insertedId) {
+              if (inserted) {
                 toast.success("update success fully");
                 reset();
               } else {
@@ -63,6 +65,27 @@ const UserProfile = () => {
       //   }
       // });
   };
+
+  // load data from user profiles tables 
+  const [userData, setUserData] = useState([]);
+
+  useEffect(
+      ()=>{
+
+        axios.get(`http://localhost:5000/myprofile?emailId=${user.email}`, {
+          headers:{
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+          },
+        }).then(res => {
+          console.log("console data", res.data);
+  
+          setUserData( res.data);
+        }  )
+       
+    
+  }, [user])
+
+
 
   return (
     <div className="container">
@@ -198,6 +221,38 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
+
+      <Row>
+        <Col>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th> User name</th>
+          <th>Email </th>
+          <th>Education</th>
+          <th>LinkedIn</th>
+          <th>phoneNumber</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        {userData?.map(item => (
+          <tr>
+          <td>{item.userName}</td>
+          <td>{item.email}</td>
+          <td>{item.education}</td>
+          <td>{item.linkedIn}</td>
+          <td>{item.phoneNumber}</td>
+          <td>{item.location}</td>
+        </tr>
+
+        ))}
+        
+       
+      </tbody>
+    </Table>
+        </Col>
+      </Row>
     </div>
   );
 };
