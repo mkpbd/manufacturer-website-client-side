@@ -32,10 +32,10 @@ const Dashboard = () => {
               &times;
             </a>
             <Link className="nav-link" to="/dashboard">
-              My Appointments
+              My orders
             </Link>
-            <Link className="nav-link" to="/dashboard/pro">
-              My History
+            <Link className="nav-link" to="/dashboard/review">
+               Review
             </Link>
             <Link className="nav-link" to="/dashboard/user-profile">
               My Profiles
